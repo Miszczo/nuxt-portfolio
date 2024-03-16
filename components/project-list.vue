@@ -1,6 +1,6 @@
 <template>
     <p class="mb-10">
-        Take lool at my Github projects!
+        Take look at my Github projects!
     </p>
 
     <section v-if="pending">Pending...</section>
@@ -16,9 +16,12 @@
                     :href="repository.html_url"
                     target="_blank"
                 >
+                    <div class="text-xs text-gray-400">{{ useDateFormat(repository.created_at, "DD-MM-YYYY").value }}</div>
                     <div class="flex items-center justify-between">
                         <div class="font-semibold">{{ repository.name }}</div>
-                        <div>{{ repository.stargazers_count }} ⭐</div>
+                        <div>
+                            <div>{{ repository.stargazers_count }} ⭐</div>
+                        </div>
                     </div>
                     <p class="text-sm">
                         {{ repository.description }}
@@ -32,7 +35,6 @@
 
 <script setup>
 const { error, pending, data } = await useFetch('https://api.github.com/users/miszczo/repos');
-console.log(data)
 
 const repos = computed(() => {
     return data.value.filter(repo => repo.description)
@@ -41,5 +43,5 @@ const repos = computed(() => {
             const dateB = new Date(b.created_at);
             return dateB - dateA;
         });
-})
+});
 </script>
