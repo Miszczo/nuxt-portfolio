@@ -3,6 +3,19 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@nuxtjs/tailwindcss',
-    '@vueuse/nuxt'
-  ]
+    '@vueuse/nuxt',
+    '@nuxtjs/color-mode',
+    '@nuxt/content'
+  ],
+  content:{
+    highlight: {
+        theme: {
+            default: 'min-light',
+            dark: 'min-dark',
+        }
+    }
+  },
+  colorMode: {
+    classSuffix: ''
+  }
 })

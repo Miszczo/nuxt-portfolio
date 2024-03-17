@@ -29,10 +29,7 @@
     </nav>
 </template>
 
-<style
-    lang="postcss"
-    scoped
->
+<style scoped>
 .link {
     @apply p-1 hover:bg-gray-200;
 }

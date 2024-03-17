@@ -5,7 +5,7 @@
 
     <section v-if="pending">Pending...</section>
     <section v-else-if="error">Something wen wrong... try again</section>
-    <section v-else="error">
+    <section v-else>
         <ul class="grid grid-cols-1 gap-4">
             <li
                 v-for="repository in repos"
