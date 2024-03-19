@@ -1,5 +1,5 @@
 ---
-title: 'Title of the page'
+title: 'First post on our website'
 description: 'meta description of the page'
 head:
   meta:
@@ -13,6 +13,7 @@ head:
       content: '© 2022 NuxtLabs'
     - name: 'og:title'
       content: 'This is an OpenGraph title'
+publishedAt: 2024-01-12 10:43:09
 ---
 # First post on our website
 ## Introduction 
